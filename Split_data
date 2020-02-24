@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep  9 19:31:18 2019
+
+@author: Busin
+"""
+import pandas as pd
+
+
+file = pd.read_csv('full_user.csv')
+alpha = pd.DataFrame(file)
+data = alpha.copy()
+file1 = data[0:9999]
+file2 = data[10000:19999]
+file3 = data[20000:29999]
+file4 = data[30000:39999]
+file5 = data[40000:50000]
+
+export1 = file1.to_csv("file1.csv")
+export2 = file2.to_csv("file2.csv")
+export3 = file3.to_csv("file3.csv")
+export4 = file4.to_csv("file4.csv")
+export5 = file5.to_csv("file5.csv")
