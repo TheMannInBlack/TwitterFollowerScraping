@@ -1,0 +1,25 @@
+import twint
+import pandas as pd
+from multiprocessing import Process
+
+
+
+importfile = pd.read_csv("file1.csv")
+dataframe = pd.DataFrame(importfile)
+Users = dataframe['username']
+users = ['X','Y']
+#name = "set1.csv"
+#print(Users)
+
+
+#for user in users:
+def pullandadd(user):
+    c = twint.Config()
+    c.Username = user
+    c.User_full = True
+    c.Store_csv = True
+    c.Output = 'set1.csv'
+    twint.run.Lookup(c)
+
+for i in Users:
+    pullandadd(i)
