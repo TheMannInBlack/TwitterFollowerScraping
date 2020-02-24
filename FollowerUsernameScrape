@@ -1,0 +1,14 @@
+import twint
+
+
+
+c = twint.Config()
+c.Username = "MNUFC"
+c.User_full = False
+c.Store_csv = True
+c.Output = 'full_user.csv'
+
+
+twint.run.Followers(c)
+
+print("Done")
